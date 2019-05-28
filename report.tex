@@ -160,6 +160,9 @@ The code has produced 10 plots, figures \ref{fig:KS-1} to \ref{fig:KS-10}, one f
 
 \subsubsection{Interpretation of results}
 Based on the 10 plots produced, given the null hypothesis `this set was drawn from a Gaussian distribution with mean 0 and $\sigma = 1$', we can say that:
+
+\textbf{The following analysis was done when the samples were of size up to 1000. For some reason, when using the full sample, even the scipy test doesn't give good agreements with the data sets and a standard normal distribution. Only set 4 can be regarded as potentially Gaussian, based on the plots shown later in this report, the rest have p-values that fall below the rejection line. This is not enough evidence to reject the hypothesis though! In principle, based on the contradictory behaviour of the p-value for different sample sizes, maybe doing the same analysis combined with bootstrapping could produce more `reliable' results in a sense that the resulting p-value might be a better indication of the truthfulness of the null-hypothesis. The versions of the plots that the following points were based on are available in the github folder KS-test-old-plots for anyone interested.}
+
 \begin{itemize}
     \item Set 1: histogram doesn't match so good, and the probability rejects the hypothesis.
     \item Set 2: obviously not Gaussian when histogram is shown, the probability absolutely rejects the hypothesis also.
@@ -177,14 +180,14 @@ Based on the 10 plots produced, given the null hypothesis `this set was drawn fr
 \centering
 \begin{minipage}[t]{7.6cm}
     \centering
-    \includegraphics[width = 7.6cm]{./plots/KStest-set1.pdf}
+    \includegraphics[width = 7.6cm]{./plots/KStest-set1.png}
     \caption{\textbf{Upper}: Probability that set 1 matches with a random normal sample; \textbf{middle}: KS-test statistic value; \textbf{lower}: histogram of data set with overlaid Gaussian.}
     \label{fig:KS-1}
 \end{minipage}%
 \qquad
 \begin{minipage}[t]{7.6cm}
     \centering
-    \includegraphics[width = 7.6cm]{./plots/KStest-set2.pdf}
+    \includegraphics[width = 7.6cm]{./plots/KStest-set2.png}
     \caption{\textbf{Upper}: Probability that set 2 matches with a random normal sample; \textbf{middle}: KS-test statistic value; \textbf{lower}: histogram of data set with overlaid Gaussian.}
     \label{fig:KS-2}
 \end{minipage}%
@@ -194,14 +197,14 @@ Based on the 10 plots produced, given the null hypothesis `this set was drawn fr
 \centering
 \begin{minipage}[t]{7.6cm}
     \centering
-    \includegraphics[width = 7.6cm]{./plots/KStest-set3.pdf}
+    \includegraphics[width = 7.6cm]{./plots/KStest-set3.png}
     \caption{\textbf{Upper}: Probability that set 3 matches with a random normal sample; \textbf{middle}: KS-test statistic value; \textbf{lower}: histogram of data set with overlaid Gaussian.}
     \label{fig:KS-3}
 \end{minipage}%
 \qquad
 \begin{minipage}[t]{7.6cm}
     \centering
-    \includegraphics[width = 7.6cm]{./plots/KStest-set4.pdf}
+    \includegraphics[width = 7.6cm]{./plots/KStest-set4.png}
     \caption{\textbf{Upper}: Probability that set 4 matches with a random normal sample; \textbf{middle}: KS-test statistic value; \textbf{lower}: histogram of data set with overlaid Gaussian.}
     \label{fig:KS-4}
 \end{minipage}%
@@ -211,14 +214,14 @@ Based on the 10 plots produced, given the null hypothesis `this set was drawn fr
 \centering
 \begin{minipage}[t]{7.6cm}
     \centering
-    \includegraphics[width = 7.6cm]{./plots/KStest-set5.pdf}
+    \includegraphics[width = 7.6cm]{./plots/KStest-set5.png}
     \caption{\textbf{Upper}: Probability that set 5 matches with a random normal sample; \textbf{middle}: KS-test statistic value; \textbf{lower}: histogram of data set with overlaid Gaussian.}
     \label{fig:KS-5}
 \end{minipage}%
 \qquad
 \begin{minipage}[t]{7.6cm}
     \centering
-    \includegraphics[width = 7.6cm]{./plots/KStest-set6.pdf}
+    \includegraphics[width = 7.6cm]{./plots/KStest-set6.png}
     \caption{\textbf{Upper}: Probability that set 6 matches with a random normal sample; \textbf{middle}: KS-test statistic value; \textbf{lower}: histogram of data set with overlaid Gaussian.}
     \label{fig:KS-6}
 \end{minipage}%
@@ -228,14 +231,14 @@ Based on the 10 plots produced, given the null hypothesis `this set was drawn fr
 \centering
 \begin{minipage}[t]{7.6cm}
     \centering
-    \includegraphics[width = 7.6cm]{./plots/KStest-set7.pdf}
+    \includegraphics[width = 7.6cm]{./plots/KStest-set7.png}
     \caption{\textbf{Upper}: Probability that set 7 matches with a random normal sample; \textbf{middle}: KS-test statistic value; \textbf{lower}: histogram of data set with overlaid Gaussian.}
     \label{fig:KS-7}
 \end{minipage}%
 \qquad
 \begin{minipage}[t]{7.6cm}
     \centering
-    \includegraphics[width = 7.6cm]{./plots/KStest-set8.pdf}
+    \includegraphics[width = 7.6cm]{./plots/KStest-set8.png}
     \caption{\textbf{Upper}: Probability that set 8 matches with a random normal sample; \textbf{middle}: KS-test statistic value; \textbf{lower}: histogram of data set with overlaid Gaussian.}
     \label{fig:KS-8}
 \end{minipage}%
@@ -245,14 +248,14 @@ Based on the 10 plots produced, given the null hypothesis `this set was drawn fr
 \centering
 \begin{minipage}[t]{7.6cm}
     \centering
-    \includegraphics[width = 7.6cm]{./plots/KStest-set9.pdf}
+    \includegraphics[width = 7.6cm]{./plots/KStest-set9.png}
     \caption{\textbf{Upper}: Probability that set 9 matches with a random normal sample; \textbf{middle}: KS-test statistic value; \textbf{lower}: histogram of data set with overlaid Gaussian.}
     \label{fig:KS-9}
 \end{minipage}%
 \qquad
 \begin{minipage}[t]{7.6cm}
     \centering
-    \includegraphics[width = 7.6cm]{./plots/KStest-set10.pdf}
+    \includegraphics[width = 7.6cm]{./plots/KStest-set10.png}
     \caption{\textbf{Upper}: Probability that set 10 matches with a random normal sample; \textbf{middle}: KS-test statistic value; \textbf{lower}: histogram of data set with overlaid Gaussian. }
     \label{fig:KS-10}
 \end{minipage}%
@@ -457,7 +460,7 @@ The following code produces plots of the values of the cells when the masses are
 
 The figures produced are the four slices, shown on figures \ref{fig:slice4} to \ref{fig:slice14}.
 
-\begin{figure}[!h]
+\begin{figure}!h]
 \centering
 \begin{minipage}[t]{7.8cm}
     \centering
@@ -474,7 +477,7 @@ The figures produced are the four slices, shown on figures \ref{fig:slice4} to \
 \end{minipage}
 \end{figure}
 
-\begin{figure}[!h]
+\begin{figure}[h]
 \centering
 \begin{minipage}[t]{7.8cm}
     \centering
@@ -509,6 +512,64 @@ The code has produced figures \ref{fig:pass4} and \ref{fig:pass0}, which look li
     \includegraphics[width=11cm]{./plots/passing-particle-0.pdf}
     \caption{Value of cell 0 when a particle `passes' through the grid domain in x.}
     \label{fig:pass0}
+\end{figure}
+
+\subsection{Part c: Cloud in Cell}
+For this part the idea is that the mass of a particle should be divided among the grid points closest to it using an interpolation strategy. The following code has the functions
+\begin{itemize}
+    \item \verb+get_value_cic()+ which gives the assigned mass value of a one-dimensional cell, given there is a particle at a given x coordinate. Implemented this way, if a particle is inbetween 2 cells, half of its mass would be assigned to one, and half to the other.
+    \item \verb+acc_points_cic()+ which adds to the mass value of the points of the matrix M. The way this is done is by calculating the volume of the mini rectangular prism that is closest to each point, and taking this as the mass value.
+    \item The script then plots a 1d `moving particle' representation again, puts the points from part (a) in the grid M and plots the same slices.
+\end{itemize}
+
+\lstinputlisting[language=Python]{ex5c.py}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=11cm]{./plots/cic-4.pdf}
+    \caption{Value of cell 4 when a particle `passes' through the grid domain in x with the cloud in cell method.}
+    \label{fig:cic4}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=11cm]{./plots/cic-0.pdf}
+    \caption{Value of cell 0 when a particle `passes' through the grid domain in x with the cloud in cell method.}
+    \label{fig:cic0}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\begin{minipage}[t]{7.8cm}
+    \centering
+    \includegraphics[width = 7.8cm]{./plots/cic-slice-4.pdf}
+    \caption{Slice of grid at z = 4 and colourbar representing the mass value of the corresponding cell using the cloud in cell method.}
+    \label{fig:cslice4}
+\end{minipage}
+\qquad
+\begin{minipage}[t]{7.8cm}
+    \centering
+    \includegraphics[width = 7.8cm]{./plots/cic-slice-9.pdf}
+    \caption{Slice of grid at z = 9 and colourbar representing the mass value of the corresponding cell using the cloud in cell method.}
+    \label{fig:cslice9}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\begin{minipage}[t]{7.8cm}
+    \centering
+    \includegraphics[width = 7.8cm]{./plots/cic-slice-11.pdf}
+    \caption{Slice of grid at z = 11 and colourbar representing the mass value of the corresponding cell using the cloud in cell method.}
+    \label{fig:cslice11}
+\end{minipage}
+\qquad
+\begin{minipage}[t]{7.8cm}
+    \centering
+    \includegraphics[width = 7.8cm]{./plots/cic-slice-14.pdf}
+    \caption{Slice of grid at z = 14 and colourbar representing the mass value of the corresponding cell using the cloud in cell method.}
+    \label{fig:cslice14}
+\end{minipage}
 \end{figure}
 
 \section{Exercise 6: Classifying gamma-ray bursts}
