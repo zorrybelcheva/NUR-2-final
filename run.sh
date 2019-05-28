@@ -57,6 +57,9 @@ python3 -W ignore ex5a_supplementary.py > output/ex5a-supplementary.txt
 echo "Running exercise 5b: Individual cells"
 python3 -W ignore ex5b.py > output/ex5b.txt
 
+echo "Running exercise 5c: Cloud In Cell"
+python3 -W ignore ex5c.py
+
 echo "Running exercise 7: Building a Barnes-Hut quadtree"
 if [ ! -e colliding.hdf5 ]; then
   wget https://home.strw.leidenuniv.nl/~nobels/coursedata/colliding.hdf5
