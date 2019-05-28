@@ -89,7 +89,7 @@ def ks_test(x, cdf, args):
         elif z < 1.18:
             v = np.exp(-np.pi*np.pi/8/z/z)
             P = np.sqrt(2*np.pi)/z*(v + v**9 + v**25)
-        elif z >= 1.18:
+        else:
             v = np.exp(-2*z*z)
             P = 1 - 2*(v-v**4+v**9)
         return 1-P
@@ -97,40 +97,38 @@ def ks_test(x, cdf, args):
     # The bigger the number of bins, the better the KS test
     N = len(x)
     bin_number = int(100*(max(x)-min(x)))
-    # bin_number = max(100, int(N/10))
     counts, bins = np.histogram(x, bins=bin_number)
     width = bins[1]-bins[0]
-    bins += width
+    # bins += width
     dist = np.zeros(len(counts))
-    c = sum(counts)
     counts_array = np.zeros(len(counts))
 
     for i in range(len(counts)):
-        dist[i] = abs(sum(counts[:i])/c-cdf(bins[i], *args))
+        dist[i] = abs(sum(counts[:i])/N - cdf(bins[i+i], *args))
         counts_array[i] = sum(counts[:i])
 
-    D = max(abs(dist))
-    z = D*(np.sqrt(N) + 0.12 + 0.11/np.sqrt(N))
-    # print(z)
+    D = max(dist)
+    N_sqrt = np.sqrt(N)
+    z = D*(N_sqrt + 0.12 + 0.11/N_sqrt)
     return D, Q(z)
 
 
 # Returns G(x | mu, sigma). Default: standard normal:
 #                           G(x | mu = 0, sigma = 1)
 def gaussian(x, mu=0, var=1.):
-    G = 1/(np.sqrt(2*np.pi*var))*np.exp(-(x-mu)**2/(2*var))
+    G = 1/(np.sqrt(2*np.pi*var))*np.exp(-(x-mu)*(x-mu)/(2*var))
     return G
 
 
 # Get the value of CDF(x) for sample = sample
 def get_cdf_value(x, sample):
-    total = len(sample)
-    no = 0
-    # instead of using np.where():
-    for i in range(total):
-        if sample[i] < x:
-            no += 1
-    return no/total
+    # total = len(sample)
+    # no = 0
+    # # instead of using np.where():
+    # for i in range(total):
+    #     if sample[i] < x:
+    #         no += 1
+    return len(sample[sample <= x])/len(sample)
 
 
 # --------------- EXERCISE 1E: 10 DATA SETS ---------------
@@ -138,9 +136,9 @@ sets = np.loadtxt('randomnumbers.txt')
 set_size = len(sets[:, 0])
 set_no = len(sets[0, :])
 
-sample_sizes = np.logspace(1, np.log10(set_size), num=20).astype(np.int64)
-ks_tests = np.zeros(20)
-p = np.zeros(20)
+sample_sizes = np.logspace(1, np.log10(set_size), num=30).astype(np.int64)
+ks_tests = np.zeros(30)
+p = np.zeros(30)
 
 sample = create_rand_normal_2d(size=sample_sizes[-1])
 
@@ -153,6 +151,9 @@ for i in range(set_no):
         ks_tests[j], p[j] = ks_test(sets[:size, i], get_cdf_value, [x_drawn])
 
         j += 1
+
+    # mid = time.time()
+    # print('After set '+str(i)+': ', mid - beg)
 
     fig, (ax2, ax1, ax3) = plt.subplots(3, 1, figsize=(7, 6))
     ax1.plot(sample_sizes, ks_tests, color='k', label='KS test statistic')
@@ -186,7 +187,7 @@ for i in range(set_no):
 
     fig.tight_layout()
     fig.subplots_adjust(hspace=0.4)
-    fig.savefig('plots/KStest-set'+str(i+1)+'.pdf')
+    fig.savefig('plots/KStest-set'+str(i+1)+'.png', dpi=300)
 
 end = time.time()
 
