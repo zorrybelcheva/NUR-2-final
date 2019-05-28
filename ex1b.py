@@ -134,7 +134,7 @@ plt.legend(fontsize='xx-small', loc='upper right')
 plt.xlabel('Random number')
 plt.ylabel('Probability density function / normalised bin count')
 plt.tight_layout()
-plt.savefig('plots/box-muller.pdf')
+plt.savefig('./plots/box-muller.pdf')
 # plt.close()
 
 print('Plotting pairs of normal rands...')
@@ -146,7 +146,7 @@ plt.xlabel('Random number')
 plt.ylabel('Random number')
 plt.legend(fontsize='xx-small', loc='lower right')
 plt.tight_layout()
-plt.savefig('plots/normal-rands-2d.pdf')
+plt.savefig('./plots/normal-rands-2d.pdf')
 # plt.close()
 
 
