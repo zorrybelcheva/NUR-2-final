@@ -104,7 +104,7 @@ def ks_test(x, cdf, args):
     counts_array = np.zeros(len(counts))
 
     for i in range(len(counts)):
-        dist[i] = abs(sum(counts[:i])/N - cdf(bins[i+i], *args))
+        dist[i] = abs(sum(counts[:i])/N-cdf(bins[i], *args))
         counts_array[i] = sum(counts[:i])
 
     D = max(dist)
@@ -153,7 +153,7 @@ for i in range(set_no):
         j += 1
 
     # mid = time.time()
-    # print('After set '+str(i)+': ', mid - beg)
+    # print('After set '+str(j)+': ', mid - beg)
 
     fig, (ax2, ax1, ax3) = plt.subplots(3, 1, figsize=(7, 6))
     ax1.plot(sample_sizes, ks_tests, color='k', label='KS test statistic')
