@@ -82,7 +82,7 @@ plt.xlabel('Random number value')
 plt.ylabel('Random number value')
 plt.title('Random floating point numbers against each other')
 plt.tight_layout()
-plt.savefig('plots/RNGtest1.pdf')
+plt.savefig('./plots/RNGtest1.pdf')
 
 
 # ---------- SECOND TEST: random no.s against their index --------
@@ -92,7 +92,7 @@ plt.bar(range(N), xrand, width=1, facecolor='maroon')
 plt.xlabel('Random number index')
 plt.ylabel('Random number value')
 plt.tight_layout()
-plt.savefig('plots/RNGtest2.pdf')
+plt.savefig('./plots/RNGtest2.pdf')
 
 
 # ------------ THIRD TEST: binning the random numbers ------------
@@ -126,7 +126,7 @@ plt.title('Testing uniformity of RNG')
 plt.xlabel('Bins, width 0.05')
 plt.ylabel('Counts, numbers per bin')
 plt.tight_layout()
-plt.savefig('plots/RNGtest3_zoomin.pdf')
+plt.savefig('./plots/RNGtest3_zoomin.pdf')
 
 
 # Saving the latest seed to the seed.txt file:
